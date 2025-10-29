@@ -1,8 +1,15 @@
 -- ================================
--- Configuración de Neovim para C
+-- Configuración de Neovim cross-platform
 -- ================================
 
--- --- Gestor de plugins (lazy.nvim) ---
+-- Detectar sistema operativo
+local sysname = vim.loop.os_uname().sysname
+local is_windows = sysname == "Windows_NT"
+local is_linux = sysname == "Linux"
+
+-- ================================
+-- Gestor de plugins (lazy.nvim)
+-- ================================
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 if not vim.loop.fs_stat(lazypath) then
   vim.fn.system({
@@ -12,6 +19,7 @@ if not vim.loop.fs_stat(lazypath) then
   })
 end
 vim.opt.rtp:prepend(lazypath)
+
 require("lazy").setup({
   { "morhetz/gruvbox" },
   { "sainnhe/gruvbox-material" },
@@ -54,15 +62,9 @@ require("lazy").setup({
       wrap = false,
       use_default_opts = true,
       constrain_cursor = true,
-      highlight = {
-        treesitter = true,
-        lsp = true,
-        load_buffers = false,
-      },
+      highlight = { treesitter = true, lsp = true, load_buffers = false },
       follow = { enabled = false },
-      type_icons = {
-        E = "󰅚 ", W = "󰀪 ", I = " ", N = " ", H = " ",
-      },
+      type_icons = { E = "󰅚 ", W = "󰀪 ", I = " ", N = " ", H = " " },
       borders = {
         vert = "┃", strong_header = "━", strong_cross = "╋",
         strong_end = "┫", soft_header = "╌", soft_cross = "╂",
@@ -116,23 +118,33 @@ require("lazy").setup({
   { "numToStr/Comment.nvim", opts = {} },
 })
 
--- --- Apariencia ---
-vim.cmd([[
-  syntax on
-  set termguicolors
-  colorscheme onedark
-  set number
-  set showmatch
-  filetype plugin indent on
-  syntax enable
-]])
+-- ================================
+-- Apariencia
+-- ================================
+vim.cmd("syntax on")
+vim.opt.termguicolors = true
+vim.opt.number = true
+vim.opt.showmatch = true
+vim.cmd("filetype plugin indent on")
+vim.cmd("syntax enable")
 
--- --- Sangría ---
+-- Colores diferentes según sistema
+if is_windows then
+  vim.cmd("colorscheme gruvbox-material")
+else
+  vim.cmd("colorscheme onedark")
+end
+
+-- ================================
+-- Sangría
+-- ================================
 vim.opt.tabstop = 4
 vim.opt.shiftwidth = 4
 vim.opt.expandtab = true
 
--- --- Autocompletado (coc.nvim) ---
+-- ================================
+-- Autocompletado coc.nvim
+-- ================================
 vim.opt.completeopt = {"menuone", "noinsert", "noselect"}
 vim.opt.shortmess:append "c"
 vim.opt.updatetime = 300
@@ -141,53 +153,49 @@ vim.opt.hidden = true
 vim.opt.backup = false
 vim.opt.writebackup = false
 
--- Confirmar autocompletado con Enter
+-- Confirmar autocompletado con Enter o Tab
 vim.api.nvim_set_keymap("i", "<CR>", 'coc#pum#visible() ? coc#pum#confirm() : "<CR>"', {silent=true, expr=true})
--- Opcional: Tab para confirmar completado
 vim.api.nvim_set_keymap("i", "<Tab>", 'pumvisible() ? coc#_select_confirm() : "<Tab>"', {silent=true, expr=true})
+vim.api.nvim_set_keymap('i', '<C-Space>', 'coc#refresh()', {expr=true, silent=true})
 
--- --- Autoindentación ---
+-- ================================
+-- Autoindentación
+-- ================================
 vim.opt.smartindent = true
 vim.opt.autoindent = true
 vim.opt.cindent = true
 
--- --- Atajos ---
+-- ================================
+-- Atajos
+-- ================================
+-- Deshacer
+vim.keymap.set('i', '<C-z>', '<C-o>u')
+vim.keymap.set('n', '<C-z>', 'u')
 
--- --- Deshacer ---
-vim.keymap.set('i', '<C-z>', '<C-o>u')  -- Insert mode undo
-vim.keymap.set('n', '<C-z>', 'u')       -- Normal mode undo
-
--- --- Portapapeles ---
-vim.keymap.set('v', '<C-c>', '"+y')     -- Copiar al portapapeles
-vim.keymap.set('n', '<C-v>', '"+p')     -- Pegar desde portapapeles
-vim.keymap.set('i', '<C-v>', '<C-r>+')  -- Pegar en insert mode
+-- Portapapeles
+vim.keymap.set('v', '<C-c>', '"+y')
+vim.keymap.set('n', '<C-v>', '"+p')
+vim.keymap.set('i', '<C-v>', '<C-r>+')
 
 -- Ctrl+Tab: siguiente buffer
 vim.keymap.set('n', '<C-Tab>', ':bnext<CR>', { noremap = true, silent = true })
-
 -- Ctrl+Shift+Tab: buffer anterior
 vim.keymap.set('n', '<C-S-Tab>', ':bprevious<CR>', { noremap = true, silent = true })
 
--- --- Autocompletado coc.nvim ---
-vim.keymap.set('i', '<C-Space>', 'coc#refresh()', {expr=true, silent=true})
-
--- --- Selección ---
+-- Selección
 vim.opt.selection = "exclusive"
 vim.opt.selectmode = "mouse,key"
 
--- Shift + Flechas en modo normal e insertar para entrar en visual y moverse
-vim.keymap.set('i', '<S-Left>', '<Esc>vbh')
-vim.keymap.set('i', '<S-Right>', '<Esc>vl')
-vim.keymap.set('i', '<S-Up>', '<Esc>vk')
-vim.keymap.set('i', '<S-Down>', '<Esc>vj')
+-- Shift + Flechas para moverse en visual/insert/normal
+local directions = {Left='h', Right='l', Up='k', Down='j'}
+for k, v in pairs(directions) do
+  vim.keymap.set('i', '<S-'..k..'>', '<Esc>v'..v)
+  vim.keymap.set('n', '<S-'..k..'>', 'v'..v)
+end
 
-vim.keymap.set('n', '<S-Left>', 'vbh')
-vim.keymap.set('n', '<S-Right>', 'vl')
-vim.keymap.set('n', '<S-Up>', 'vk')
-vim.keymap.set('n', '<S-Down>', 'vj')
-
-
--- --- Configuración de Treesitter ---
+-- ================================
+-- Configuración de Treesitter
+-- ================================
 require'nvim-treesitter.configs'.setup {
   ensure_installed = { "c" },
   highlight = {
@@ -195,3 +203,4 @@ require'nvim-treesitter.configs'.setup {
       disable = { "c" },
   },
 }
+
