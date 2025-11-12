@@ -193,6 +193,14 @@ for k, v in pairs(directions) do
   vim.keymap.set('n', '<S-'..k..'>', 'v'..v)
 end
 
+-- Ponemos las direcciones de nvim una más a la izquierda (h j k l) -> (j k l ñ)
+vim.keymap.set('n', 'j', 'h')
+vim.keymap.set('n', 'k', 'j')
+vim.keymap.set('n', 'l', 'k')
+vim.keymap.set('n', 'ñ', 'l')
+
+
+
 -- ================================
 -- Configuración de Treesitter
 -- ================================
