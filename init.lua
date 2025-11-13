@@ -130,7 +130,7 @@ vim.cmd("syntax enable")
 
 -- Colores diferentes según sistema
 if is_windows then
-  vim.cmd("colorscheme gruvbox-material")
+  vim.cmd("colorscheme gruvbox")
 else
   vim.cmd("colorscheme onedark")
 end
