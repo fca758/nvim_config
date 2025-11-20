@@ -1,0 +1,9 @@
+TODO:
+- eliminar clang para cambiarlo por lsp zero
+
+PLUGINS
+
+- LSP zero para C, Java, python, lua.. etc
+- hoocker o algo asi para cambiar entre ventanas ez 
+- FuzzyFinder 
+- TreeSitter comprobar que está correctamente instalado
