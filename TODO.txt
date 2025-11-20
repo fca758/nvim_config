@@ -3,7 +3,5 @@ TODO:
 
 PLUGINS
 
-- LSP zero para C, Java, python, lua.. etc
-- hoocker o algo asi para cambiar entre ventanas ez 
-- FuzzyFinder 
-- TreeSitter comprobar que está correctamente instalado
+- LSP zero para C, Java, python, lua.. etc no consigo uno que funcione para todos estos
+- harpoon, necesito saber como quitar archivos de ahi y arreglar los atajos de teclado
