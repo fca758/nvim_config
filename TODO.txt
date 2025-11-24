@@ -5,3 +5,4 @@ PLUGINS
 
 - LSP zero para C, Java, python, lua.. etc no consigo uno que funcione para todos estos
 - harpoon, necesito saber como quitar archivos de ahi y arreglar los atajos de teclado
+- Hacer que en el menú fuzzyfinding funcione con mis teclas de movimiento (modo normal no insertar)

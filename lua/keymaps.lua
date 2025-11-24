@@ -10,8 +10,7 @@ map('n', '<C-v>', '"+p')
 map('i', '<C-v>', '<C-r>+')
 
 -- Buffers
-map('n', '<C-Tab>', ':bnext<CR>', { silent = true })
-map('n', '<C-S-Tab>', ':bprevious<CR>', { silent = true })
+map('n', '<C-I>', '<C-w><C-w>', { silent = true })
 
 
 -- Ponemos las direcciones de nvim una más a la izquierda (h j k l) -> (j k l ñ)
