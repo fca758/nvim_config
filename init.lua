@@ -6,7 +6,7 @@ require("options")
 require("keymaps")
 
 -- Gestionado por Lazy (primero inicializa /plugins/init.lua)
-require("plugins")
+require("initplugin")
 
 -- Colores de la terminal
 require("colors")

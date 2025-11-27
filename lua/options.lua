@@ -13,3 +13,4 @@ opt.cindent = true
 vim.cmd("filetype plugin indent on")
 vim.cmd("syntax enable")
 
+vim.lsp.enable("clangd")
