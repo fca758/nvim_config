@@ -1,4 +1,3 @@
-
 -- Otras opciones
 require("options")
 

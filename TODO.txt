@@ -1,9 +1,8 @@
-TODO:
-- El dia que me haga una cuenta personal de git, cambiar de propetario a la otra
-
 PLUGINS
 
 - harpoon, necesito saber como quitar archivos de ahi y arreglar los atajos de teclado
 - Comprobar el :checkhealh porque parece que ahi hay algunas cosas raretas
 - Hacer un README y poner mis TODO aqui, que me da pereza todo el rato cambiarlo aquí
-- Añadir autocompletado con cmp (creo que es eso)
+- Controlar bien los buffers de copiado y pegado
+- Poner buenos atajos de teclado
+- Aprenderme los atajos para cambiarlos bien

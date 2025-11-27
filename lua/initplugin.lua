@@ -17,9 +17,10 @@ require("lazy").setup({
     { "sainnhe/gruvbox-material" },
     { "joshdick/onedark.vim" },
 
-    -- Otros plugins simples
-    { "jiangmiao/auto-pairs" },
+    -- Autocomentarios
     { "numToStr/Comment.nvim", opts = {} },
+
+    -- Cursor animado
     { "sphamba/smear-cursor.nvim", opts = {} },
 
     -- FuzzyFinder
@@ -28,19 +29,8 @@ require("lazy").setup({
     -- Cambiar entre ventanas
     { "ThePrimeagen/harpoon" },
 
-    -- Autocompletado
-    {
-        "hrsh7th/nvim-cmp",
-        dependencies = {
-            "hrsh7th/cmp-nvim-lsp",
-            "hrsh7th/cmp-buffer",
-            "hrsh7th/cmp-path",
-            "L3MON4D3/LuaSnip",
-            "saadparwaiz1/cmp_luasnip",
-        },
-    },
 
-    -- Todo lo que viene siendo configuración de nvim
+    -- Todo lo que viene siendo configuración de nvim LSP
     {
         "williamboman/mason-lspconfig.nvim",
         dependencies = {
@@ -48,8 +38,14 @@ require("lazy").setup({
             "neovim/nvim-lspconfig",
         },
     },
-
+    -- IDEM
     {"neovim/nvim-lspconfig"},
+
+    -- Autocompletado
+    {"Saghen/blink.cmp"},
+
+    -- Autocompletado de () y {}
+    { import = "plugins.minipairs"},
 
     -- Plugins con configuración independiente
     { import = "plugins.lualine"},
@@ -57,8 +53,8 @@ require("lazy").setup({
     { import = "plugins.harpoon"},
     { import = "plugins.telescope"},
     { import = "plugins.lsp.mason" },
-    { import = "plugins.lsp.masonConfig" }
+    { import = "plugins.lsp.masonConfig" },
+    { import = "plugins.blink" },
 
 })
-
 
