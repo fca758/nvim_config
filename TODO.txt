@@ -1,7 +1,9 @@
 TODO:
 - eliminar clang para cambiarlo por lsp zero
+- El dia que me haga una cuenta personal de git, cambiar de propetario a la otra
 
 PLUGINS
 
 - LSP zero para C, Java, python, lua.. etc no consigo uno que funcione para todos estos
 - harpoon, necesito saber como quitar archivos de ahi y arreglar los atajos de teclado
+- Comprobar el :checkhealh porque parece que ahi hay algunas cosas raretas

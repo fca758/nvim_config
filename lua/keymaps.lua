@@ -9,7 +9,7 @@ map('v', '<C-c>', '"+y')
 map('n', '<C-v>', '"+p')
 map('i', '<C-v>', '<C-r>+')
 
--- Buffers
+-- Buffers (ventanas)
 map('n', '<C-I>', '<C-w><C-w>', { silent = true })
 
 
@@ -23,5 +23,12 @@ map({"n","v","o"},"k","j",{noremap=true,silent=true})
 map({"n","v","o"},"l","k",{noremap=true,silent=true})
 map({"n","v","o"},"ñ","l",{noremap=true,silent=true})
 
-
+-- Ctrl + q abre el directorio actual
 map("n","<C-q>", function() vim.cmd("e .") end)
+
+-- Ctrl + n pone el modo normal
+map("i","<C-N>", "<esc>")
+
+-- w y W para ir adelante y atras en palabras
+map("n", "b", "<nop>")
+map("n", "W", "b")
