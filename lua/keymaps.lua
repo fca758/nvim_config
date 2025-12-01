@@ -30,8 +30,8 @@ map("n","<C-q>", function() vim.cmd("e .") end)
 map("i","<C-N>", "<esc>")
 
 -- w y W para ir adelante y atras en palabras
-map("n", "b", "<nop>")
-map("n", "W", "b")
+map({"n", "v"}, "b", "<nop>")
+map({"n", "v"}, "W", "b")
 
 -- Parar de buscar
 map("n", "<C-_>", function() vim.cmd(":noh") end)

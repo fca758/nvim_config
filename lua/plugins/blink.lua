@@ -26,6 +26,7 @@ return {
             nerd_font_variant = 'mono'
         },
 
+        signature = { enabled = true},
         -- (Default) Only show the documentation popup when manually triggered
         completion = {
             documentation = { auto_show = true },

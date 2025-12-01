@@ -9,3 +9,5 @@ require("initplugin")
 
 -- Colores de la terminal
 require("colors")
+
+require("lsp")
