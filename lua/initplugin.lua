@@ -21,7 +21,7 @@ require("lazy").setup({
     { "numToStr/Comment.nvim", opts = {} },
 
     -- Cursor animado
-    { "sphamba/smear-cursor.nvim", opts = {} },
+    -- { "sphamba/smear-cursor.nvim", opts = {} },
 
     -- FuzzyFinder
     { "nvim-telescope/telescope.nvim", tag = "v0.1.9"},
