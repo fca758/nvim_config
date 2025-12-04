@@ -29,6 +29,7 @@ require("lazy").setup({
     -- Cambiar entre ventanas
     { "ThePrimeagen/harpoon" },
 
+    { "nvim-treesitter/nvim-treesitter"},
 
     -- Todo lo que viene siendo configuración de nvim LSP
     {
