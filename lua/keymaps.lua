@@ -29,9 +29,6 @@ map("n","<C-q>", function() vim.cmd("e .") end)
 -- Ctrl + n pone el modo normal
 map("i","<C-N>", "<esc>")
 
--- w y W para ir adelante y atras en palabras
-map({"n", "v"}, "b", "<nop>")
-map({"n", "v"}, "W", "b")
 
 -- Parar de buscar
 map("n", "<C-_>", function() vim.cmd(":noh") end)

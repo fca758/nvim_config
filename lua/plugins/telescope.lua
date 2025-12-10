@@ -29,7 +29,7 @@ return {
             vim.keymap.set('n', '<C-f>h', builtin.help_tags, { desc = 'Telescope help tags' })
             vim.keymap.set("n", "<C-f>a", function()
                 require("telescope.builtin").find_files({
-                    cwd = "..",
+                    cwd = "~",
                     hidden = true,
                })
             end, { desc = "Buscar archivos con Telescope" })
