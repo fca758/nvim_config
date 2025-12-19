@@ -1,3 +1,53 @@
-# Carpeta de lazy.lua
-lazylock.json
+# --- Archivos del Sistema Operativo ---
+.DS_Store
+Thumbs.db
+._*
 
+# --- Archivos Temporales de Vim/Neovim ---
+# Archivos Swap (indican que el archivo está abierto)
+*.swp
+*.swo
+# Archivos de copia de seguridad (backup)
+*~
+*.bak
+*.un~
+# Archivos de historial de 'undo' (si se guardan localmente)
+.undo/
+*.undo
+
+# --- Sesiones y Logs ---
+# Archivos de sesión (guardan el estado de ventanas/buffers)
+Session.vim
+session/
+# Logs del LSP (Language Server Protocol)
+lsp.log
+*.log
+
+# --- Gestores de Plugins ---
+
+# Packer.nvim (si usas Packer)
+# El archivo compilado se genera automáticamente y no debe subirse
+plugin/packer_compiled.lua
+
+# Lazy.nvim (si usas Lazy)
+# NOTA: Generalmente se recomienda SUBIR 'lazy-lock.json' para mantener
+# las mismas versiones de plugins en todos tus dispositivos.
+# Si prefieres que siempre se actualice a lo último, descomenta la línea de abajo:
+# lazy-lock.json
+
+# --- Dependencias y Entornos ---
+# Carpeta node_modules (si tienes dependencias de Node instaladas localmente)
+node_modules/
+# Archivos de Python (si tienes scripts en python dentro de la config)
+__pycache__/
+*.py[cod]
+
+# --- Herramientas externas / Instalaciones locales ---
+# Si usas Mason y por error se instaló dentro de la carpeta de config
+mason/
+
+# --- Configuración local de proyecto ---
+# Archivos de configuración que no quieres compartir (ej. rutas específicas)
+.nvim.lua
+.exrc
+.nvimrc
