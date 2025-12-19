@@ -33,7 +33,7 @@ plugin/packer_compiled.lua
 # NOTA: Generalmente se recomienda SUBIR 'lazy-lock.json' para mantener
 # las mismas versiones de plugins en todos tus dispositivos.
 # Si prefieres que siempre se actualice a lo último, descomenta la línea de abajo:
-# lazy-lock.json
+lazy-lock.json
 
 # --- Dependencias y Entornos ---
 # Carpeta node_modules (si tienes dependencias de Node instaladas localmente)
