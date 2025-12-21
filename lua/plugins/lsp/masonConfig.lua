@@ -10,7 +10,8 @@ return{
             "cssls",
             "lua_ls",
             "pyright",
-            "clangd"
+            "clangd",
+            "ruff"
         },
 
     },
