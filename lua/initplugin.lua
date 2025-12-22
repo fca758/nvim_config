@@ -45,6 +45,9 @@ require("lazy").setup({
     -- Autocompletado
     {"Saghen/blink.cmp"},
 
+    -- COPILOT
+    {"github/copilot.vim"},
+
     -- Autocompletado de () y {}
     { import = "plugins.minipairs"},
 
@@ -56,6 +59,10 @@ require("lazy").setup({
     { import = "plugins.lsp.mason" },
     { import = "plugins.lsp.masonConfig" },
     { import = "plugins.blink" },
-
+    git = {
+        -- Esto fuerza a Lazy a usar HTTPS para bajar plugins (más estable para descargas)
+        -- pero NO afecta a tu git global ni a tus repositorios.
+        url_format = "https://github.com/%s.git",
+    },
 })
 
