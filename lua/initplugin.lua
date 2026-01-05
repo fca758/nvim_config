@@ -32,15 +32,6 @@ require("lazy").setup({
     { "nvim-treesitter/nvim-treesitter"},
 
     -- Todo lo que viene siendo configuración de nvim LSP
-    {
-        "williamboman/mason-lspconfig.nvim",
-        dependencies = {
-            "williamboman/mason.nvim",
-            "neovim/nvim-lspconfig",
-        },
-    },
-    -- IDEM
-    {"neovim/nvim-lspconfig"},
 
     -- Autocompletado
     {"Saghen/blink.cmp"},
@@ -48,6 +39,11 @@ require("lazy").setup({
     -- COPILOT
     {"github/copilot.vim"},
 
+
+    {"nvim-telescope/telescope-fzf-native.nvim", build = "make",
+     config = function()
+         require("telescope").load_extension("fzf")
+     end},
     -- Autocompletado de () y {}
     { import = "plugins.minipairs"},
 

@@ -4,10 +4,6 @@ local map = vim.keymap.set
 map('i', '<C-z>', '<C-o>u')
 map('n', '<C-z>', 'u')
 
--- Portapapeles
-map('v', '<C-c>', '"+y')
-map('n', '<C-v>', '"+p')
-map('i', '<C-v>', '<C-r>+')
 
 -- Buffers (ventanas)
 map('n', '<C-I>', '<C-w><C-w>', { silent = true })

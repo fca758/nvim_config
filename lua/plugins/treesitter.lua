@@ -3,14 +3,32 @@ return {
     branch = 'master',
     build = ":TSUpdate",  -- actualiza los parsers automáticamente
     config = function()
+        require('nvim-treesitter.install').prefer_git = true  -- usa git para instalar parsers
         require 'nvim-treesitter.configs'.setup {
             -- A list of parser names, or "all" (the listed parsers MUST always be installed)
-            ensure_installed = { "c", "python", "lua", "vim", "vimdoc", "query", "markdown", "markdown_inline" },
+            
+            ensure_installed = { 
+                "c",
+                "python",
+                "lua",
+                "vim",
+                "vimdoc",
+                "markdown",
+                "markdown_inline" ,
+                "javascript",
+                "typescript",
+                "html",
+                "css",
+                "bash",
+                "json",
+                "java",
+            },
+
 
 
             -- Automatically install missing parsers when entering buffer
             -- Recommendation: set to false if you don't have `tree-sitter` CLI installed locally
-            auto_install = false,
+            auto_install = true,
 
             highlight = {
                 enable = true,
@@ -30,6 +48,56 @@ return {
                 -- Instead of true it can also be a list of languages
                 additional_vim_regex_highlighting = false,
             },
-    }
-end
+        }
+        -- ==========================================
+        -- COLORES PERSONALIZADOS PARA TODOS LOS LENGUAJES
+        -- ==========================================
+        vim.api.nvim_create_autocmd("ColorScheme", {
+            pattern = "*",
+            callback = function()
+                -- 1. PALABRAS CLAVE BÁSICAS (Azul oscuro)
+                -- Para: const, let, function, if, else, try, async
+                vim.api.nvim_set_hl(0, "@keyword", { fg = "#569cd6" })
+                vim.api.nvim_set_hl(0, "@keyword.function", { fg = "#569cd6" })
+                vim.api.nvim_set_hl(0, "@keyword.coroutine", { fg = "#569cd6" }) -- async
+
+                -- 2. PALABRAS DE CONTROL DE FLUJO (Rosa/Magenta)
+                -- Para: return, await, throw, import, from, new
+                vim.api.nvim_set_hl(0, "@keyword.return", { fg = "#c586c0" })
+                vim.api.nvim_set_hl(0, "@keyword.operator", { fg = "#c586c0" }) -- new, await
+                vim.api.nvim_set_hl(0, "@keyword.import", { fg = "#c586c0" })
+                vim.api.nvim_set_hl(0, "@exception", { fg = "#c586c0" }) -- throw
+
+                -- 3. FUNCIONES (Amarillo crema)
+                -- Para: removeMember, getApi, renderLayout
+                vim.api.nvim_set_hl(0, "@function", { fg = "#dcdcaa" })
+                vim.api.nvim_set_hl(0, "@function.call", { fg = "#dcdcaa" })
+                vim.api.nvim_set_hl(0, "@method", { fg = "#dcdcaa" })
+                vim.api.nvim_set_hl(0, "@method.call", { fg = "#dcdcaa" })
+
+                -- 4. VARIABLES Y PROPIEDADES (Azul claro cielo)
+                -- Para: listId, memberId, api, list.members
+                vim.api.nvim_set_hl(0, "@variable", { fg = "#9cdcfe" })
+                vim.api.nvim_set_hl(0, "@property", { fg = "#9cdcfe" })
+                vim.api.nvim_set_hl(0, "@field", { fg = "#9cdcfe" })
+                vim.api.nvim_set_hl(0, "@parameter", { fg = "#9cdcfe" }) -- Argumentos
+
+                -- 5. CADENAS DE TEXTO / STRINGS (Naranja terracota)
+                -- Para: 'List not found', "dashboard-header"
+                vim.api.nvim_set_hl(0, "@string", { fg = "#ce9178" })
+
+                -- 6. COMENTARIOS (Verde)
+                -- Para: // UI rendering
+                vim.api.nvim_set_hl(0, "@comment", { fg = "#6a9955"})
+
+                -- 7. HTML / TAGS (Para el código dentro de tu renderLayout)
+                -- <div, <h2, <p (Azul como las keywords)
+                vim.api.nvim_set_hl(0, "@tag", { fg = "#569cd6" }) 
+                -- class=, style=, id= (Azul claro como variables)
+                vim.api.nvim_set_hl(0, "@tag.attribute", { fg = "#9cdcfe" }) 
+                -- < > (Gris o Blanco para los delimitadores)
+                vim.api.nvim_set_hl(0, "@tag.delimiter", { fg = "#808080" }) 
+            end,
+        })
+    end,
 }
