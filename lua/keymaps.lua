@@ -28,3 +28,6 @@ map("i","<C-N>", "<esc>")
 
 -- Parar de buscar
 map("n", "<C-_>", function() vim.cmd(":noh") end)
+
+-- Copiar un archivo entero al portapapeles
+map("n", "<C-S-H>", "ggVG\"+y")

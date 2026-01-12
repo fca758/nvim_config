@@ -34,7 +34,6 @@ return {
                     -- SOLO PARA TW_GSA
                     file_ignore_patterns ={
                         "FrontendCliente/*",
-                        "api/*",
                         "api_rest/vendor/*",
                         "api_rest/src/Helpers/*",
                         "api_rest/src/Modules/Middleware/*",

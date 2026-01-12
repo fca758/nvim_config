@@ -27,7 +27,7 @@ require("lazy").setup({
     { "nvim-telescope/telescope.nvim", tag = "v0.1.9"},
 
     -- Cambiar entre ventanas
-    { "ThePrimeagen/harpoon" },
+    -- { "ThePrimeagen/harpoon" },
 
     { "nvim-treesitter/nvim-treesitter"},
 
@@ -50,7 +50,7 @@ require("lazy").setup({
     -- Plugins con configuración independiente
     { import = "plugins.lualine"},
     { import = "plugins.treesitter"},
-    { import = "plugins.harpoon"},
+    -- { import = "plugins.harpoon"},
     { import = "plugins.telescope"},
     { import = "plugins.lsp.mason" },
     { import = "plugins.lsp.masonConfig" },
