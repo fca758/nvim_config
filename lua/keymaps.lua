@@ -29,5 +29,9 @@ map("i","<C-N>", "<esc>")
 -- Parar de buscar
 map("n", "<C-_>", function() vim.cmd(":noh") end)
 
--- Copiar un archivo entero al portapapeles
-map("n", "<C-S-H>", "ggVG\"+y")
+-- Copiar un archivo entero al portapapeles (WIP)
+-- map("n", "<leader-c>", "ggVG\"+y")
+--
+
+-- Al escribir "nn" en modo insert de devuelve a normal 
+map("i", "nn", "<esc>")

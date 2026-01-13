@@ -17,3 +17,4 @@ Tareas pendientes para dejar la configuración fina:
     - [ ] Otro colorscheme?
     - [ ] Tengo que cambiar lualine?
     - [ ] Mirar si tengo los LSP que quiero
+- [ ] Tener un map para copiar un archivo entero
