@@ -34,4 +34,4 @@ map("n", "<C-_>", function() vim.cmd(":noh") end)
 --
 
 -- Al escribir "nn" en modo insert de devuelve a normal 
-map("i", "nn", "<esc>")
+map("i", "ff", "<esc>")

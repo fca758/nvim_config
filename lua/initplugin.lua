@@ -37,7 +37,7 @@ require("lazy").setup({
     {"Saghen/blink.cmp"},
 
     -- COPILOT
-    {"github/copilot.vim"},
+    -- {"github/copilot.vim"},
 
 
     {"nvim-telescope/telescope-fzf-native.nvim", build = "make",
