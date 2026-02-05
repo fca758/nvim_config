@@ -41,7 +41,6 @@ return {
                         "api_rest/src/Modules/Login/*",
                         "%.md",
                         "%.sql",
-                        "%.json",
                         "%.png",
                         "%.jpg",
                         "%.jpeg",
@@ -52,8 +51,8 @@ return {
                 },
             })
             -- Keymaps
+            vim.keymap.set('n', '<C-f>F', builtin.treesitter, { desc = 'Telescope find functions' })
             vim.keymap.set('n', '<C-f>f', builtin.find_files, { desc = 'Telescope find files' })
-            vim.keymap.set('n', '<C-f>h', builtin.help_tags, { desc = 'Telescope help tags' })
             vim.keymap.set("n", "<C-f>a", function()
                 require("telescope.builtin").find_files({
                     cwd = "~",

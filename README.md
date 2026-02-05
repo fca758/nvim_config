@@ -6,9 +6,10 @@ Configuración personal para Neovim que uso en entornos de linux o WSL
 Tareas pendientes para dejar la configuración fina:
 
 - [ ] **Harpoon**:
-    - [ ] Instalarlo bien de una puta vez
+    - [x] Instalarlo bien de una puta vez
     - [ ] Aprender a borrar archivos de la lista 
     - [ ] Arreglar y definir los atajos de teclado finales.
+    - [ ] Haver que aparezca arriba bien la barra de los archivos puestos en harpoon
 - [ ] Revisar `:checkhealth` a fondo y solucionar los warnings/errores "raros".
 - [ ] Entender mejor el manejo de registros (buffers de copiado).
 - [ ] Tener un mejor estilo de código, lo quiero más bonito.
