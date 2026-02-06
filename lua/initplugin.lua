@@ -17,12 +17,6 @@ require("lazy").setup({
     { "sainnhe/gruvbox-material" },
     { "joshdick/onedark.vim" },
 
-    -- Autocomentarios
-    { "numToStr/Comment.nvim", opts = {} },
-
-    -- Cursor animado
-    -- { "sphamba/smear-cursor.nvim", opts = {} },
-
     -- FuzzyFinder
     { "nvim-telescope/telescope.nvim", tag = "v0.1.9"},
 

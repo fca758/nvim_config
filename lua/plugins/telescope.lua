@@ -30,24 +30,6 @@ return {
                         case_mode = "smart_case",        -- or "ignore_case" or "respect_case"
                     },
                 },
-                
-                    -- SOLO PARA TW_GSA
-                    file_ignore_patterns ={
-                        "FrontendCliente/*",
-                        "api_rest/vendor/*",
-                        "api_rest/src/Helpers/*",
-                        "api_rest/src/Modules/Middleware/*",
-                        "api_rest/src/Modules/Articulos/*",
-                        "api_rest/src/Modules/Login/*",
-                        "%.md",
-                        "%.sql",
-                        "%.png",
-                        "%.jpg",
-                        "%.jpeg",
-                        "%.lock",
-                        "%.txt"
-
-                    },
                 },
             })
             -- Keymaps
