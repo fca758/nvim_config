@@ -7,8 +7,6 @@ return {
         harpoon:setup()
 
         -- Configuración de Keymaps básicos
-        -- Agregar archivo a Harpoon
-        vim.keymap.set("n", "<C-a>", function() harpoon:list():add() end, { desc = "Harpoon: Add file" })
         vim.keymap.set("n", "<C-x>", function() 
             local harpoon = require("harpoon")
             local list = harpoon:list()
@@ -24,6 +22,9 @@ return {
             end
         end, { desc = "Harpoon: Remove file" })
 
+        -- Agregar archivo a Harpoon
+        vim.keymap.set("n", "<C-w>", function() harpoon:list():add() end, { desc = "Harpoon: Add file" })
+
         -- Ver el menú de Harpoon
         vim.keymap.set("n", "<C-e>", function() harpoon.ui:toggle_quick_menu(harpoon:list()) end, { desc = "Harpoon: Menu" })
 
@@ -33,5 +34,9 @@ return {
         vim.keymap.set("n", "<C-k>", function() harpoon:list():select(3) end)
         vim.keymap.set("n", "<C-l>", function() harpoon:list():select(4) end)
 
+
+        -- Toggle previous & next buffers stored within Harpoon list
+        vim.keymap.set("n", "<C-p>", function() harpoon:list():prev() end)
+        vim.keymap.set("n", "<C-n>", function() harpoon:list():next() end)
     end,
 }

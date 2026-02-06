@@ -20,9 +20,9 @@ map({"n","v","o"},"ñ","l",{noremap=true,silent=true})
 map("n","<C-q>", function() vim.cmd("vs .") end)
 
 -- Copiar un archivo entero al portapapeles (WIP)
--- map("n", "<leader-c>", "ggVG\"+y")
---
+map("n", "@c", "ggVG\"+y")
 
 -- Al escribir "nn" en modo insert de devuelve a normal 
 map("i", "ff", "<esc>")
 
+map("n", "<C-s>", function() vim.cmd(":noh") end)
