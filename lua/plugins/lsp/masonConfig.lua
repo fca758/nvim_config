@@ -2,16 +2,13 @@ return{
     
         "williamboman/mason-lspconfig.nvim",
     opts ={
-        -- TODO: Añadir JAVA
         -- auto instalar e activar
         ensure_installed = {
-            "ts_ls",
-            "html",
-            "cssls",
-            "lua_ls",
-            "pyright",
-            "clangd",
-            "ruff"
+            "pyright", "ruff",      -- Python
+            "html", "cssls", "ts_ls", -- Web
+            "clangd",               -- C/C++
+            "jdtls",                -- Java
+            "lua_ls"                -- Neovim config
         },
 
     },
