@@ -14,5 +14,3 @@ opt.cindent = true
 vim.cmd("filetype plugin indent on")
 vim.cmd("syntax enable")
 vim.cmd("set nowrap")
-
-vim.lsp.enable("clangd")

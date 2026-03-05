@@ -1,15 +1,21 @@
-return{
-    
-        "williamboman/mason-lspconfig.nvim",
-    opts ={
-        -- auto instalar e activar
+return {
+    "williamboman/mason-lspconfig.nvim",
+    dependencies = { "neovim/nvim-lspconfig" },
+    opts = {
         ensure_installed = {
-            "pyright", "ruff",      -- Python
-            "html", "cssls", "ts_ls", -- Web
-            "clangd",               -- C/C++
-            "jdtls",                -- Java
-            "lua_ls"                -- Neovim config
+            "pyright",
+            "ruff",
+            "html",
+            "cssls",
+            "ts_ls",
+            "clangd",
+            "jdtls",
+            "lua_ls",
         },
-
+        handlers = {
+            function(server_name)
+                require("lspconfig")[server_name].setup({})
+            end,
+        },
     },
 }

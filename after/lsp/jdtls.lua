@@ -1,3 +1,9 @@
 return {
-    config={}
+    settings = {
+        java = {
+            configuration = {
+                updateBuildConfiguration = "interactive",
+            },
+        },
+    },
 }

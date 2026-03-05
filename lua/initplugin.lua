@@ -26,6 +26,7 @@ require("lazy").setup({
     { "nvim-treesitter/nvim-treesitter"},
 
     -- Todo lo que viene siendo configuración de nvim LSP
+    { "neovim/nvim-lspconfig" },
 
     -- Autocompletado
     {"Saghen/blink.cmp"},

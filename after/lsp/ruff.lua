@@ -1,3 +1,9 @@
 return {
-    settings = {}
+    settings = {
+        ruff = {
+            lint = {
+                fixAll = true,
+            },
+        },
+    },
 }
