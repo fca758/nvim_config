@@ -1,4 +1,12 @@
 local keymap = vim.keymap -- for conciseness
+
+local capabilities = vim.tbl_deep_extend(
+    "force",
+    {},
+    vim.lsp.protocol.make_client_capabilities(),
+    require("blink.cmp").get_lsp_capabilities()
+)
+
 vim.api.nvim_create_autocmd("LspAttach", {
   group = vim.api.nvim_create_augroup("UserLspConfig", {}),
   callback = function(ev)

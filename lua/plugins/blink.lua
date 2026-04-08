@@ -21,7 +21,8 @@ return {
         --
         -- See :h blink-cmp-config-keymap for defining your own keymap
         keymap = {
-            preset = 'enter' },
+            preset = 'enter' 
+        },
 
         appearance = {
             -- 'mono' (default) for 'Nerd Font Mono' or 'normal' for 'Nerd Font'
@@ -38,6 +39,12 @@ return {
         -- elsewhere in your config, without redefining it, due to `opts_extend`
         sources = {
             default = { 'lsp', 'path', 'snippets', 'buffer' },
+            providers = {
+                lsp = {
+                    enabled = true,
+                    name = "lsp",
+                },
+            },
         },
 
         -- (Default) Rust fuzzy matcher for typo resistance and significantly better performance

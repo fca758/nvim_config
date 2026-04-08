@@ -31,8 +31,9 @@ require("lazy").setup({
     -- Autocompletado
     {"Saghen/blink.cmp"},
 
-    -- COPILOT
-    -- {"github/copilot.vim"},
+    -- Ada support
+    { "thindil/Ada-Bundle" },
+    { "TamaMcGlinn/nvim-lspconfig-ada" },
 
 
     {"nvim-telescope/telescope-fzf-native.nvim", build = "make",
