@@ -55,6 +55,7 @@ require("lazy").setup({
     { import = "plugins.lsp.masonConfig" },
     { import = "plugins.blink" },
     { import = "plugins.vimtex" },
+    { import = "plugins.neoscroll" },
     git = {
         -- Esto fuerza a Lazy a usar HTTPS para bajar plugins (más estable para descargas)
         -- pero NO afecta a tu git global ni a tus repositorios.
