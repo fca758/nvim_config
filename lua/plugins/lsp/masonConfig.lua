@@ -26,13 +26,8 @@ return {
             "clangd",
             "jdtls",
             "lua_ls",
-            "als",
         },
         handlers = {
-            ["als"] = function()
-                local config = get_server_config("als")
-                require("lspconfig").als.setup(vim.tbl_deep_extend("force", { capabilities = capabilities }, config))
-            end,
             function(server_name)
                 local config = get_server_config(server_name)
                 require("lspconfig")[server_name].setup(vim.tbl_deep_extend("force", { capabilities = capabilities }, config))

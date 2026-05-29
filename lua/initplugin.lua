@@ -31,11 +31,6 @@ require("lazy").setup({
     -- Autocompletado
     {"Saghen/blink.cmp"},
 
-    -- Ada support
-    { "thindil/Ada-Bundle" },
-    { "TamaMcGlinn/nvim-lspconfig-ada" },
-
-
     {"nvim-telescope/telescope-fzf-native.nvim", build = "make",
      config = function()
          require("telescope").load_extension("fzf")
