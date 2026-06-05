@@ -4,8 +4,8 @@ return {
   opts = {
     mappings = {},
   },
-  config = function()
-    require("neoscroll").setup()
+  config = function(_, opts)
+    require("neoscroll").setup(opts)
     local ns = require("neoscroll")
     default_scroll_opts.duration = 200
     local lines = math.floor(vim.o.lines * 0.25)

@@ -11,7 +11,7 @@ return {
         vim.keymap.set("n", "<C-e>", function() harpoon:list():add() end, { desc = "Harpoon: Add file" })
 
         -- Ver el menú de Harpoon
-        vim.keymap.set("n", "<C-r>", function() harpoon.ui:toggle_quick_menu(harpoon:list()) end, { desc = "Harpoon: Menu" })
+        vim.keymap.set("n", "<C-t>", function() harpoon.ui:toggle_quick_menu(harpoon:list()) end, { desc = "Harpoon: Menu" })
 
         -- Quitar archivo de Harpoon
         vim.keymap.set("n", "<C-q>", function()
