@@ -20,8 +20,6 @@ require("lazy").setup({
     -- FuzzyFinder
     { "nvim-telescope/telescope.nvim", tag = "v0.1.9"},
 
-    { "nvim-treesitter/nvim-treesitter"},
-
     -- Todo lo que viene siendo configuración de nvim LSP
     { "neovim/nvim-lspconfig" },
 
