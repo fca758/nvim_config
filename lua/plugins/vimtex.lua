@@ -16,10 +16,10 @@ return {
         }
     end,
     keys = {
-        { "<leader>ll", "<cmd>VimtexCompile<cr>", desc = "Compile LaTeX" },
-        { "<leader>lv", "<cmd>vimtexView<cr>", desc = "View PDF" },
-        { "<leader>lc", "<cmd>VimtexClean<cr>", desc = "Clean build files" },
-        { "<leader>lk", "<cmd>vimtex-stop<cr>", desc = "Stop compilation" },
-        { "<leader>le", "<cmd>vimtex-errors<cr>", desc = "Show errors" },
+        -- { "<leader>ll", "<cmd>VimtexCompile<cr>", desc = "Compile LaTeX" },
+        -- { "<leader>lv", "<cmd>vimtexView<cr>", desc = "View PDF" },
+        -- { "<leader>lc", "<cmd>VimtexClean<cr>", desc = "Clean build files" },
+        -- { "<leader>lk", "<cmd>vimtex-stop<cr>", desc = "Stop compilation" },
+        -- { "<leader>le", "<cmd>vimtex-errors<cr>", desc = "Show errors" },
     },
 }

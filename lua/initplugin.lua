@@ -31,7 +31,7 @@ require("lazy").setup({
          require("telescope").load_extension("fzf")
      end},
     -- VimTeX
-    { "lervag/vimtex" },
+    -- { "lervag/vimtex" },
 
     -- Autocompletado de () y {}
     { import = "plugins.minipairs"},
@@ -44,7 +44,7 @@ require("lazy").setup({
     { import = "plugins.lsp.mason" },
     { import = "plugins.lsp.masonConfig" },
     { import = "plugins.blink" },
-    { import = "plugins.vimtex" },
+    -- { import = "plugins.vimtex" },
     { import = "plugins.neoscroll" },
     git = {
         -- Esto fuerza a Lazy a usar HTTPS para bajar plugins (más estable para descargas)
