@@ -36,8 +36,9 @@ return {
         vim.keymap.set("n", "<C-l>", function() harpoon:list():select(4) end, { desc = "Harpoon: File 4" })
 
         -- Toggle previous & next buffers
-        vim.keymap.set("n", "<C-p>", function() harpoon:list():prev() end, { desc = "Harpoon: Prev file" })
-        vim.keymap.set("n", "<C-n>", function() harpoon:list():next() end, { desc = "Harpoon: Next file" })
+        vim.keymap.set("n", "<C-n>", function() harpoon:list():prev() end, { desc = "Harpoon: Prev file" })
+        vim.keymap.set("n", "<C-p>", function() harpoon:list():next() end, { desc = "Harpoon: Next file" })
 
+        vim.keymap.set("n", "<C-TAB>", function() harpoon:list():next() end, { desc = "Harpoon: Next file" })
     end,
 }

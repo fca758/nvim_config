@@ -11,3 +11,6 @@ require("initplugin")
 require("colors")
 
 require("lsp")
+
+-- Compilar, ejecutar y limpiar proyectos C/C++
+require("build")

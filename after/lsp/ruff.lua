@@ -1,9 +1,9 @@
 return {
     settings = {
         ruff = {
-            lint = {
-                fixAll = true,
-            },
+            fixAll = true,
+            organizeImports = true,
+            showSyntaxErrors = true,
         },
     },
 }

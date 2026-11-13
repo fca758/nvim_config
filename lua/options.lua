@@ -1,3 +1,6 @@
+vim.g.mapleader = " "
+vim.g.maplocalleader = " "
+
 local opt = vim.opt
 
 opt.termguicolors = true
@@ -10,6 +13,16 @@ opt.expandtab = true
 opt.smartindent = true
 opt.autoindent = true
 opt.cindent = true
+
+opt.clipboard = "unnamedplus"
+opt.undofile = true
+opt.scrolloff = 8
+opt.signcolumn = "yes"
+opt.updatetime = 250
+opt.ignorecase = true
+opt.smartcase = true
+opt.splitright = true
+opt.splitbelow = true
 
 vim.cmd("filetype plugin indent on")
 vim.cmd("syntax enable")

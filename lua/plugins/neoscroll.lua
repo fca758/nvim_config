@@ -7,7 +7,6 @@ return {
   config = function(_, opts)
     require("neoscroll").setup(opts)
     local ns = require("neoscroll")
-    default_scroll_opts.duration = 200
     local lines = math.floor(vim.o.lines * 0.25)
     vim.keymap.set({ "n", "v", "x" }, "<ScrollWheelDown>",
       function() ns.scroll(lines, { move_cursor = true, duration = 200 }) end)

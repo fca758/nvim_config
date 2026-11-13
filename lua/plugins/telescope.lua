@@ -2,10 +2,8 @@ return {
     {
         "nvim-telescope/telescope.nvim",
         tag = "v0.1.9",
-        -- Es recomendable declarar las dependencias para evitar errores
         dependencies = {
             "nvim-lua/plenary.nvim",
-            -- Necesario si quieres usar la extensión fzf que estás configurando
             { "nvim-telescope/telescope-fzf-native.nvim", build = "make" },
         },
         config = function()
@@ -16,43 +14,42 @@ return {
             telescope.setup({
                 defaults = {
                     mappings = {
-                        n = { -- NORMAL MODE dentro de Telescope
+                        n = {
                             ["k"] = actions.move_selection_next,
                             ["l"] = actions.move_selection_previous,
                             ["q"] = actions.close,
                             ["<C-k>"] = actions.move_selection_next,
                             ["<C-l>"] = actions.move_selection_previous,
                         },
-                        i = { -- INSERT MODE dentro de Telescope
+                        i = {
                             ["<C-k>"] = actions.move_selection_next,
                             ["<C-l>"] = actions.move_selection_previous,
                         },
                     },
-                }, -- <-- El bloque defaults cierra aquí
-                
-                -- El bloque extensions va al mismo nivel que defaults
+                },
                 extensions = {
                     fzf = {
-                        fuzzy = true,                    -- false will only do exact matching
-                        override_generic_sorter = true,  -- override the generic sorter
-                        override_file_sorter = true,     -- override the file sorter
-                        case_mode = "smart_case",        -- or "ignore_case" or "respect_case"
+                        fuzzy = true,
+                        override_generic_sorter = true,
+                        override_file_sorter = true,
+                        case_mode = "smart_case",
                     },
                 },
             })
 
-            -- Cargar la extensión fzf después del setup
             pcall(telescope.load_extension, "fzf")
 
-            -- Keymaps
-            vim.keymap.set('n', '<C-f>F', builtin.treesitter, { desc = 'Telescope find functions' })
-            vim.keymap.set('n', '<C-f>f', builtin.find_files, { desc = 'Telescope find files' })
-            vim.keymap.set("n", "<C-f>a", function()
-                builtin.find_files({
-                    cwd = "~",
-                    hidden = true,
-                })
-            end, { desc = "Buscar archivos ocultos en ~ con Telescope" })
-        end
-    }
+            local map = vim.keymap.set
+
+            map("n", "<leader><leader>", builtin.find_files, { desc = "Buscar archivos" })
+            map("n", "<leader>ff", builtin.find_files, { desc = "Buscar archivos" })
+            map("n", "<leader>fg", builtin.live_grep, { desc = "Buscar texto" })
+            map("n", "<leader>fb", builtin.buffers, { desc = "Buffers abiertos" })
+            map("n", "<leader>fo", builtin.oldfiles, { desc = "Archivos recientes" })
+            map("n", "<leader>fh", builtin.help_tags, { desc = "Ayuda" })
+            map("n", "<leader>fd", builtin.diagnostics, { desc = "Diagnósticos" })
+            map("n", "<leader>fs", builtin.lsp_document_symbols, { desc = "Símbolos del documento" })
+            map("n", "<leader>fr", builtin.lsp_references, { desc = "Referencias LSP" })
+        end,
+    },
 }

@@ -45,7 +45,8 @@ end
               },
           },
           options = {
-              theme = "onedark",
+              theme = "auto",
+              disabled_filetypes = { statusline = { "snacks_dashboard" } },
           },
       })
   end

@@ -1,39 +1,19 @@
 # Configuración de nvim personal
 
-Configuración personal para Neovim que uso en entornos de linux o WSL
+Configuración personal para Neovim que uso en entornos de Linux o WSL.
 
-## TODO 
-Tareas pendientes para dejar la configuración fina:
-- [x] Revisar `:checkhealth` a fondo y solucionar los warnings/errores "raros".
-    - [ ] se ve que los LSPs están sin configurar
-    - [ ] lenguajes de programación sin ponerlas
-    - [ ] warning del Treesitter que ns que coño está
+## TODO
 
-- [ ] Los LSP están sin configurar, casi todos
-
-
-- [ ] Manual de keybinds (por ponerlas) 
-- [ ] Hacer que se pueda autocompletar correctamente todo,
-    - [ ] js 
-    - [ ] python
-    - [ ] C / C++
-    - [ ] java
-    - [ ] html / css ?????
-
+- [x] Revisar `:checkhealth` y solucionar los warnings/errores raros.
+- [x] LSP configurados y habilitados con Mason.
+- [x] Lenguajes principales: C/C++, JS/TS, Python, Java, Lua, HTML/CSS.
+- [x] Autocompletado con blink.cmp y Treesitter.
+- [x] Leader en `Espacio`; Telescope con leader y Harpoon con `Ctrl`.
+- [x] Dashboard tipo LazyVim al abrir `nvim` sin argumentos (snacks.nvim).
+- [x] Compilar/ejecutar/limpiar C y proyectos con Makefile o CMake.
+- [x] Debugger para C/C++ (codelldb) y Python (debugpy) con nvim-dap-ui.
+- [x] Colorscheme Catppuccin Frappe transparente.
+- [ ] Manual de keybinds (documentado en la vault: `02-Notas/Neovim - configuración, keybinds y flujo de trabajo`).
+- [ ] Añadir formateador para JS/TS (prettier).
+- [ ] Debugger para Java y JS (opcional).
 - [ ] Entender mejor el manejo de registros (buffers de copiado).
-
-
-
-- [ ] **Harpoon**:
-    - [ ] Ahora mismo la tabla está abajo, a ver cuando la pones arriba
-
-- [ ] **COPILOT**:
-    Dato: functiona con nvm +v0.20
-    - [ ] Investigar más sobre cómo activar o desactivarlo facil
-    - [ ] Decirle en dónde puede actuar si es posible (me gasta la cuota bastante rápido)
-
-- [ ] Tener un mejor estilo de código, lo quiero más bonito.
-    - [x] Treesitter
-    - [ ] Conf de colores de variables que me gusta
-    - [ ] Otro colorscheme?
-    - [ ] Tengo que cambiar lualine?

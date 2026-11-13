@@ -8,48 +8,34 @@ if not vim.loop.fs_stat(lazypath) then
     })
 end
 
-
 vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup({
-    -- Temas
-    { "morhetz/gruvbox" },
-    { "sainnhe/gruvbox-material" },
-    { "joshdick/onedark.vim" },
-
-    -- FuzzyFinder
-    { "nvim-telescope/telescope.nvim", tag = "v0.1.9"},
+    -- Tema
+    {
+        "catppuccin/nvim",
+        name = "catppuccin",
+        priority = 1000,
+    },
 
     -- Todo lo que viene siendo configuración de nvim LSP
     { "neovim/nvim-lspconfig" },
 
-    -- Autocompletado
-    {"Saghen/blink.cmp"},
-
-    {"nvim-telescope/telescope-fzf-native.nvim", build = "make",
-     config = function()
-         require("telescope").load_extension("fzf")
-     end},
-    -- VimTeX
-    -- { "lervag/vimtex" },
-
     -- Autocompletado de () y {}
-    { import = "plugins.minipairs"},
+    { import = "plugins.minipairs" },
 
     -- Plugins con configuración independiente
-    { import = "plugins.lualine"},
-    { import = "plugins.treesitter"},
-    { import = "plugins.harpoon"},
-    { import = "plugins.telescope"},
+    { import = "plugins.dashboard" },
+    { import = "plugins.lualine" },
+    { import = "plugins.treesitter" },
+    { import = "plugins.harpoon" },
+    { import = "plugins.telescope" },
     { import = "plugins.lsp.mason" },
     { import = "plugins.lsp.masonConfig" },
     { import = "plugins.blink" },
-    -- { import = "plugins.vimtex" },
+    { import = "plugins.dap" },
     { import = "plugins.neoscroll" },
     git = {
-        -- Esto fuerza a Lazy a usar HTTPS para bajar plugins (más estable para descargas)
-        -- pero NO afecta a tu git global ni a tus repositorios.
         url_format = "https://github.com/%s.git",
     },
 })
-

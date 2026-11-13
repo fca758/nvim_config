@@ -1,31 +1,25 @@
 return {
     "nvim-treesitter/nvim-treesitter",
-    branch = 'main',
+    branch = "main",
     lazy = false,
     build = ":TSUpdate",
     config = function()
-        require('nvim-treesitter').setup {
-            install_dir = vim.fn.stdpath('data') .. '/site',
+        require("nvim-treesitter").setup({
+            install_dir = vim.fn.stdpath("data") .. "/site",
+        })
+
+        local parsers = {
+            "c", "cpp", "python", "lua", "vim", "vimdoc", "markdown", "markdown_inline",
+            "javascript", "jsx", "typescript", "tsx", "html", "css", "bash", "json",
+            "java", "cmake",
         }
 
-        -- Autocmd para instalar/actualizar parsers que falten
-        local parsers = {
-            "c", "python", "lua", "vim", "vimdoc", "markdown", "markdown_inline",
-            "javascript", "typescript", "html", "css", "bash", "json", "java",
-        }
+        require("nvim-treesitter").install(parsers)
+
         vim.api.nvim_create_user_command("TSInstallMissing", function()
-            local have = require('nvim-treesitter').get_installed()
-            local set = {}
-            for _, p in ipairs(have or {}) do set[p] = true end
-            local missing = vim.tbl_filter(function(p) return not set[p] end, parsers)
-            if #missing == 0 then
-                vim.notify("Todos los parsers ya están instalados", vim.log.levels.INFO)
-                return
-            end
-            require('nvim-treesitter.install').install(missing)
+            require("nvim-treesitter").install(parsers)
         end, {})
 
-        -- Habilitar treesitter para todos los lenguajes que tengan parser
         vim.api.nvim_create_autocmd("FileType", {
             callback = function(args)
                 local ft = vim.bo[args.buf].filetype

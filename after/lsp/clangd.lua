@@ -1,12 +1,13 @@
 return {
-    settings = {
-        clangd = {
-            arguments = {
-                "--background-index",
-                "--compile-commands-dir=${cmake.compile_commands}",
-                "--clang-tidy",
-                "--header-insertion=iwyu",
-            },
-        },
+    cmd = {
+        "clangd",
+        "--background-index",
+        "--clang-tidy",
+        "--header-insertion=iwyu",
+        "--completion-style=detailed",
+        "--function-arg-placeholders=1",
+    },
+    init_options = {
+        clangdFileStatus = true,
     },
 }
