@@ -30,6 +30,7 @@ require("lazy").setup({
     { import = "plugins.treesitter" },
     { import = "plugins.harpoon" },
     { import = "plugins.telescope" },
+    { import = "plugins.conform" },
     { import = "plugins.lsp.mason" },
     { import = "plugins.lsp.masonConfig" },
     { import = "plugins.blink" },

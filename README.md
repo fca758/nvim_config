@@ -14,6 +14,6 @@ Configuración personal para Neovim que uso en entornos de Linux o WSL.
 - [x] Debugger para C/C++ (codelldb) y Python (debugpy) con nvim-dap-ui.
 - [x] Colorscheme Catppuccin Frappe transparente.
 - [ ] Manual de keybinds (documentado en la vault: `02-Notas/Neovim - configuración, keybinds y flujo de trabajo`).
-- [ ] Añadir formateador para JS/TS (prettier).
+- [x] Formateo con Prettier (4 espacios) y clang-format para C/C++.
 - [ ] Debugger para Java y JS (opcional).
 - [ ] Entender mejor el manejo de registros (buffers de copiado).

@@ -11,16 +11,6 @@ map("i", "ff", "<esc>")
 
 map("n", "<C-s>", function() vim.cmd(":noh") end)
 
--- Formatear con el LSP (C usa clang-format vía clangd, Python vía ruff, Java vía jdtls)
-map("n", "<leader>f", function()
-    vim.lsp.buf.format({
-        async = true,
-        filter = function(client)
-            return client.name ~= "pyright"
-        end,
-    })
-end, { desc = "Formatear buffer con LSP" })
-
 map("n", "<leader>ll", function()
     vim.cmd("write")
     local tmux_pane = "{top}"
